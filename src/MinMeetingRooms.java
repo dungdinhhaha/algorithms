@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
- class Interval {
+ class Interval { // tạo 1 cấu trúc dữ liệu mới
     int start;
     int end;
 
@@ -19,7 +19,7 @@ public class MinMeetingRooms {
         int n = intervals.length;
         int[] startTimes = new int[n];
         int[] endTimes = new int[n];
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++) { // chuẩn bị để sort 2 mảng
             startTimes[i] = intervals[i].start;
             endTimes[i] = intervals[i].end;
         }
@@ -29,7 +29,7 @@ public class MinMeetingRooms {
         int roomsNeeded = 0;
         int endIndex = 0;
 
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++) { // tính
             if (startTimes[i] < endTimes[endIndex]) {
 
                 roomsNeeded++;
@@ -44,6 +44,6 @@ public class MinMeetingRooms {
     public static void main(String[] args) {
         Interval[] intervals = {new Interval(30, 40), new Interval(0, 20), new Interval(60, 150)};
         MinMeetingRooms solution = new MinMeetingRooms();
-        System.out.println(solution.minMeetingRooms(intervals)); // Output should be 2
+        System.out.println(solution.minMeetingRooms(intervals)); 
     }
 }
